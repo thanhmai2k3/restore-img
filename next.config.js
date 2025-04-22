@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production'
+
+
 module.exports = {
-  reactStrictMode: true,
+  basePath: isProd ? '/restore-img' : '',
+  output: 'export',
+  distDir: 'dist',
+
+  // reactStrictMode: true,
   images: {
     domains: ["upcdn.io", "replicate.delivery", "lh3.googleusercontent.com"],
     unoptimized: true,
